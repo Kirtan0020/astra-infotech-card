@@ -148,12 +148,12 @@ export default function AstraBusinessCard() {
         />
         <div
           style={{
-            fontWeight: 700,
-            letterSpacing: 2.5,
-            fontSize: 12,
+            fontWeight: 600,
+            letterSpacing: 3,
+            fontSize: 11,
             marginBottom: 16,
             textTransform: "uppercase",
-            color: "#ffffff",
+            color: "rgba(255,255,255,0.65)",
           }}
         >
           Astra Infotech
@@ -202,14 +202,24 @@ export default function AstraBusinessCard() {
           </div>
         </div>
 
-        <div style={{ fontSize: 19, fontWeight: 700, margin: "4px 0 4px", color: "#ffffff" }}>
+        <div
+          style={{
+            fontSize: 20,
+            fontWeight: 800,
+            letterSpacing: -0.3,
+            lineHeight: 1.25,
+            margin: "4px 0 5px",
+            color: "#ffffff",
+          }}
+        >
           Kirtan Prajapati
         </div>
         <div
           style={{
-            fontSize: 11,
-            letterSpacing: 1,
-            color: "#ffffff",
+            fontSize: 10.5,
+            fontWeight: 600,
+            letterSpacing: 1.5,
+            color: "rgba(255,255,255,0.6)",
             textTransform: "uppercase",
             marginBottom: 16,
           }}
@@ -239,6 +249,7 @@ export default function AstraBusinessCard() {
                   color: "#fff",
                   fontSize: 13.5,
                   fontWeight: 600,
+                  letterSpacing: 0.2,
                   opacity: mounted ? 1 : 0,
                   animation: mounted
                     ? `itemIn 0.45s ease ${0.25 + i * 0.08}s forwards`
