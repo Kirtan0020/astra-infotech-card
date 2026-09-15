@@ -92,7 +92,7 @@ export default function AstraBusinessCard() {
           position: absolute;
           inset: 0;
           z-index: -1;
-          background: radial-gradient(120% 60% at 20% 0%, rgba(255,255,255,0.35), rgba(255,255,255,0) 55%);
+          background: radial-gradient(120% 60% at 20% 0%, rgba(224,247,255,0.4), rgba(224,247,255,0) 55%);
           pointer-events: none;
         }
         .astra-icon-badge { transition: transform .25s ease; }
@@ -110,17 +110,17 @@ export default function AstraBusinessCard() {
           zIndex: 1,
           width: "100%",
           maxWidth: 340,
-          background: "linear-gradient(160deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.06))",
-          borderTop: "1px solid rgba(255,255,255,0.65)",
-          borderLeft: "1px solid rgba(255,255,255,0.3)",
-          borderRight: "1px solid rgba(255,255,255,0.15)",
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          background: "linear-gradient(160deg, rgba(186,230,253,0.22), rgba(56,189,248,0.06) 45%, rgba(8,47,73,0.18))",
+          borderTop: "1px solid rgba(224,247,255,0.7)",
+          borderLeft: "1px solid rgba(186,230,253,0.35)",
+          borderRight: "1px solid rgba(56,189,248,0.2)",
+          borderBottom: "1px solid rgba(8,47,73,0.25)",
           backdropFilter: "none",
           WebkitBackdropFilter: "none",
           borderRadius: 26,
           padding: "26px 20px 22px",
           textAlign: "center",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -20px 30px -20px rgba(255,255,255,0.15)",
+          boxShadow: "0 20px 55px rgba(8,47,73,0.4), 0 0 45px rgba(56,189,248,0.25), inset 0 1px 0 rgba(224,247,255,0.55), inset 0 -20px 30px -20px rgba(56,189,248,0.2)",
           overflow: "hidden",
           opacity: mounted ? 1 : 0,
           animation: mounted ? "cardIn 0.6s cubic-bezier(.2,.8,.2,1) forwards" : "none",
