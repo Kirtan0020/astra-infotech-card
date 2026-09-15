@@ -44,6 +44,7 @@ const LINKS = [
 
 export default function AstraBusinessCard() {
   const [mounted, setMounted] = useState(false);
+  const [photoOpen, setPhotoOpen] = useState(false);
 
   useEffect(() => {
     const t = setTimeout(() => setMounted(true), 60);
@@ -72,13 +73,13 @@ export default function AstraBusinessCard() {
           min-height: 100vh;
           min-height: 100dvh;
           background-color: #4b3fd6;
-          background-image: url('/bg-mobile.png');
+          background-image: linear-gradient(rgba(2,6,23,0.68), rgba(2,6,23,0.68)), url('/bg-mobile.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
         }
         @media (min-width: 768px) {
-          .astra-shell { background-image: url('/bg-desktop.png'); }
+          .astra-shell { background-image: linear-gradient(rgba(2,6,23,0.68), rgba(2,6,23,0.68)), url('/bg-desktop.png'); }
         }
         @keyframes spinRing { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
         @keyframes cardIn { from { opacity:0; transform: translateY(24px) scale(0.96);} to { opacity:1; transform: translateY(0) scale(1);} }
@@ -97,6 +98,8 @@ export default function AstraBusinessCard() {
         }
         .astra-icon-badge { transition: transform .25s ease; }
         .astra-link-btn:hover .astra-icon-badge { transform: rotate(-8deg) scale(1.08); }
+        .astra-avatar-wrap { transition: transform .3s cubic-bezier(.2,.8,.2,1); cursor: pointer; }
+        .astra-avatar-wrap:hover, .astra-avatar-wrap:active { transform: scale(1.3); z-index: 10; filter: drop-shadow(0 10px 26px rgba(0,0,0,0.55)); }
         @media (max-width: 360px) {
           .astra-shell { padding: 10px !important; }
         }
@@ -118,13 +121,13 @@ export default function AstraBusinessCard() {
           zIndex: 1,
           width: "100%",
           maxWidth: 340,
-          background: "linear-gradient(160deg, rgba(186,230,253,0.18), rgba(56,189,248,0.04) 45%, rgba(8,47,73,0.14))",
+          background: "linear-gradient(160deg, rgba(186,230,253,0.08), rgba(56,189,248,0.02) 45%, rgba(8,47,73,0.5))",
           borderTop: "1px solid rgba(224,247,255,0.7)",
           borderLeft: "1px solid rgba(186,230,253,0.35)",
           borderRight: "1px solid rgba(56,189,248,0.2)",
           borderBottom: "1px solid rgba(8,47,73,0.25)",
-          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(1.08)",
-          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(1.08)",
+          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(0.72)",
+          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(0.72)",
           borderRadius: 26,
           padding: "26px 20px 22px",
           textAlign: "center",
@@ -161,9 +164,10 @@ export default function AstraBusinessCard() {
 
         {/* avatar with rotating gradient ring */}
         <div
+          className="astra-avatar-wrap"
           style={{
-            width: 96,
-            height: 96,
+            width: 124,
+            height: 124,
             margin: "0 auto 12px",
             borderRadius: "50%",
             position: "relative",
@@ -191,12 +195,14 @@ export default function AstraBusinessCard() {
             <img
               src={`data:image/jpeg;base64,${PHOTO_B64}`}
               alt="Kirtan Prajapati"
+              onClick={() => setPhotoOpen(true)}
               style={{
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
                 borderRadius: "50%",
                 display: "block",
+                cursor: "pointer",
               }}
             />
           </div>
@@ -286,6 +292,63 @@ export default function AstraBusinessCard() {
           })}
         </div>
       </div>
+
+      {photoOpen && (
+        <div
+          onClick={() => setPhotoOpen(false)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 50,
+            background: "rgba(0,0,0,0.88)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 20,
+            cursor: "zoom-out",
+            animation: "cardIn 0.2s ease forwards",
+          }}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setPhotoOpen(false);
+            }}
+            aria-label="Close"
+            style={{
+              position: "absolute",
+              top: 18,
+              right: 18,
+              width: 38,
+              height: 38,
+              borderRadius: "50%",
+              border: "1px solid rgba(255,255,255,0.25)",
+              background: "rgba(255,255,255,0.1)",
+              color: "#fff",
+              fontSize: 20,
+              lineHeight: "36px",
+              cursor: "pointer",
+            }}
+          >
+            &times;
+          </button>
+          <img
+            src={`data:image/jpeg;base64,${PHOTO_B64}`}
+            alt="Kirtan Prajapati"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              maxWidth: "min(90vw, 420px)",
+              maxHeight: "80vh",
+              width: "100%",
+              height: "auto",
+              borderRadius: 20,
+              boxShadow: "0 20px 60px rgba(0,0,0,0.6)",
+              objectFit: "cover",
+              cursor: "default",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }
