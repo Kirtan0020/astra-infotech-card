@@ -128,7 +128,7 @@ export default function AstraBusinessCard() {
           borderRadius: 26,
           padding: "26px 20px 22px",
           textAlign: "center",
-          boxShadow: "0 20px 55px rgba(8,47,73,0.4), 0 0 45px rgba(56,189,248,0.25), inset 0 1px 0 rgba(224,247,255,0.55), inset 0 -20px 30px -20px rgba(56,189,248,0.2)",
+          boxShadow: "0 20px 55px rgba(0,0,0,0.55), 0 0 45px rgba(2,6,23,0.6), inset 0 1px 0 rgba(224,247,255,0.55), inset 0 -20px 30px -20px rgba(56,189,248,0.2)",
           overflow: "hidden",
           opacity: mounted ? 1 : 0,
           animation: mounted ? "cardIn 0.6s cubic-bezier(.2,.8,.2,1) forwards" : "none",
