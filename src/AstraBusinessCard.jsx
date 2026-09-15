@@ -52,9 +52,9 @@ export default function AstraBusinessCard() {
 
   return (
     <div
+      className="astra-shell"
       style={{
         position: "relative",
-        minHeight: "100vh",
         width: "100%",
         background: "#0a0a16",
         display: "flex",
@@ -69,6 +69,7 @@ export default function AstraBusinessCard() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
         * { font-family: 'Montserrat', sans-serif; }
+        .astra-shell { min-height: 100vh; min-height: 100dvh; }
         @keyframes floatBlob1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(30px,40px) scale(1.15);} }
         @keyframes floatBlob2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-40px,20px) scale(1.1);} }
         @keyframes floatBlob3 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-30px) scale(1.2);} }
@@ -77,11 +78,14 @@ export default function AstraBusinessCard() {
         @keyframes itemIn { from { opacity:0; transform: translateX(-14px);} to { opacity:1; transform: translateX(0);} }
         @keyframes shimmer { 0%{ background-position: -200% 0; } 100%{ background-position: 200% 0; } }
         @keyframes twinkle { 0%,100%{ opacity:.15;} 50%{ opacity:.9;} }
-        .astra-link-btn { transition: transform .18s ease, background .18s ease, box-shadow .18s ease; }
+        .astra-link-btn { transition: transform .18s ease, background .18s ease, box-shadow .18s ease; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
         .astra-link-btn:hover { transform: translateY(-2px) scale(1.015); background: rgba(134,59,255,0.16) !important; border-color: rgba(134,59,255,0.4) !important; box-shadow: 0 10px 24px rgba(126,20,255,0.25); }
         .astra-link-btn:active { transform: scale(0.97); }
         .astra-icon-badge { transition: transform .25s ease; }
         .astra-link-btn:hover .astra-icon-badge { transform: rotate(-8deg) scale(1.08); }
+        @media (max-width: 360px) {
+          .astra-shell { padding: 10px !important; }
+        }
       `}</style>
 
       {/* animated gradient blobs */}
@@ -271,7 +275,16 @@ export default function AstraBusinessCard() {
                 >
                   <Icon size={18} color="#fff" strokeWidth={2.2} />
                 </span>
-                <span>{item.label}</span>
+                <span
+                  style={{
+                    minWidth: 0,
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                    whiteSpace: "nowrap",
+                  }}
+                >
+                  {item.label}
+                </span>
               </a>
             );
           })}
