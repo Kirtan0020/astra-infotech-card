@@ -105,8 +105,7 @@ export default function AstraBusinessCard() {
         }
         .astra-icon-badge { transition: transform .25s ease; }
         .astra-link-btn:hover .astra-icon-badge { transform: rotate(-8deg) scale(1.08); }
-        .astra-avatar-wrap { transition: transform .3s cubic-bezier(.2,.8,.2,1); cursor: pointer; }
-        .astra-avatar-wrap:hover, .astra-avatar-wrap:active { transform: scale(1.3); z-index: 10; filter: drop-shadow(0 10px 26px rgba(0,0,0,0.55)); }
+        .astra-avatar-wrap { cursor: pointer; }
         @media (max-width: 360px) {
           .astra-shell { padding: 10px !important; }
         }
