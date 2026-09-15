@@ -86,6 +86,15 @@ export default function AstraBusinessCard() {
         .astra-link-btn { transition: transform .18s ease, background .18s ease, box-shadow .18s ease; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
         .astra-link-btn:hover { transform: translateY(-2px) scale(1.015); background: rgba(134,59,255,0.16) !important; border-color: rgba(134,59,255,0.4) !important; box-shadow: 0 10px 24px rgba(126,20,255,0.25); }
         .astra-link-btn:active { transform: scale(0.97); }
+        .astra-glass { isolation: isolate; }
+        .astra-glass::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          z-index: -1;
+          background: radial-gradient(120% 60% at 20% 0%, rgba(255,255,255,0.35), rgba(255,255,255,0) 55%);
+          pointer-events: none;
+        }
         .astra-icon-badge { transition: transform .25s ease; }
         .astra-link-btn:hover .astra-icon-badge { transform: rotate(-8deg) scale(1.08); }
         @media (max-width: 360px) {
@@ -95,19 +104,24 @@ export default function AstraBusinessCard() {
 
       {/* card */}
       <div
+        className="astra-glass"
         style={{
           position: "relative",
           zIndex: 1,
           width: "100%",
           maxWidth: 340,
-          background: "linear-gradient(160deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05) 40%, rgba(10,8,30,0.22))",
-          border: "1px solid rgba(255,255,255,0.35)",
-          backdropFilter: "blur(22px) saturate(160%)",
-          WebkitBackdropFilter: "blur(22px) saturate(160%)",
+          background: "linear-gradient(160deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02) 45%, rgba(255,255,255,0.06))",
+          borderTop: "1px solid rgba(255,255,255,0.65)",
+          borderLeft: "1px solid rgba(255,255,255,0.3)",
+          borderRight: "1px solid rgba(255,255,255,0.15)",
+          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          backdropFilter: "blur(14px) saturate(180%) brightness(1.05)",
+          WebkitBackdropFilter: "blur(14px) saturate(180%) brightness(1.05)",
           borderRadius: 26,
           padding: "26px 20px 22px",
           textAlign: "center",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4), inset 0 0 40px rgba(255,255,255,0.04)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.5), inset 0 -20px 30px -20px rgba(255,255,255,0.15)",
+          overflow: "hidden",
           opacity: mounted ? 1 : 0,
           animation: mounted ? "cardIn 0.6s cubic-bezier(.2,.8,.2,1) forwards" : "none",
         }}
