@@ -127,6 +127,10 @@ export default function AstraBusinessCard() {
           zIndex: 1,
           width: "100%",
           maxWidth: 340,
+          aspectRatio: "9 / 16",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
           background: "linear-gradient(160deg, rgba(186,230,253,0.08), rgba(56,189,248,0.02) 45%, rgba(8,47,73,0.5))",
           borderTop: "1px solid rgba(224,247,255,0.7)",
           borderLeft: "1px solid rgba(186,230,253,0.35)",
@@ -135,7 +139,7 @@ export default function AstraBusinessCard() {
           backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(0.72)",
           WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(0.72)",
           borderRadius: 26,
-          padding: "26px 20px 22px",
+          padding: "18px 18px 16px",
           textAlign: "center",
           boxShadow: "0 20px 55px rgba(0,0,0,0.55), 0 0 45px rgba(2,6,23,0.6), inset 0 1px 0 rgba(224,247,255,0.55), inset 0 -20px 30px -20px rgba(56,189,248,0.2)",
           overflow: "hidden",
@@ -147,10 +151,10 @@ export default function AstraBusinessCard() {
           src={`data:image/png;base64,${LOGO_B64}`}
           alt="Astra Infotech logo"
           style={{
-            width: 68,
-            height: 68,
+            width: 52,
+            height: 52,
             borderRadius: "50%",
-            margin: "0 auto 8px",
+            margin: "0 auto 6px",
             display: "block",
             filter: "drop-shadow(0 6px 14px rgba(0,0,0,0.45)) drop-shadow(0 0 16px rgba(134,59,255,0.5))",
           }}
@@ -160,7 +164,7 @@ export default function AstraBusinessCard() {
             fontWeight: 600,
             letterSpacing: 3,
             fontSize: 11,
-            marginBottom: 16,
+            marginBottom: 10,
             textTransform: "uppercase",
             color: "rgba(255,255,255,0.65)",
           }}
@@ -172,9 +176,9 @@ export default function AstraBusinessCard() {
         <div
           className="astra-avatar-wrap"
           style={{
-            width: 124,
-            height: 124,
-            margin: "0 auto 12px",
+            width: 92,
+            height: 92,
+            margin: "0 auto 8px",
             borderRadius: "50%",
             position: "relative",
           }}
@@ -220,7 +224,7 @@ export default function AstraBusinessCard() {
             fontWeight: 800,
             letterSpacing: -0.3,
             lineHeight: 1.25,
-            margin: "4px 0 5px",
+            margin: "2px 0 3px",
             color: "#ffffff",
           }}
         >
@@ -233,13 +237,13 @@ export default function AstraBusinessCard() {
             letterSpacing: 1.5,
             color: "rgba(255,255,255,0.6)",
             textTransform: "uppercase",
-            marginBottom: 16,
+            marginBottom: 10,
           }}
         >
           Founder &amp; CEO &nbsp;•&nbsp; Astra Infotech
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
           {LINKS.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -256,7 +260,7 @@ export default function AstraBusinessCard() {
                   background: "rgba(255,255,255,0.08)",
                   border: "1px solid rgba(255,255,255,0.16)",
                   borderRadius: 14,
-                  padding: "9px 14px",
+                  padding: "7px 12px",
                   textDecoration: "none",
                   color: "#fff",
                   fontSize: 13.5,
@@ -271,8 +275,8 @@ export default function AstraBusinessCard() {
                 <span
                   className="astra-icon-badge"
                   style={{
-                    width: 34,
-                    height: 34,
+                    width: 28,
+                    height: 28,
                     borderRadius: "50%",
                     background: item.bg,
                     display: "flex",
