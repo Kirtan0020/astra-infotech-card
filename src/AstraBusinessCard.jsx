@@ -27,18 +27,18 @@ const LINKS = [
     bg: "radial-gradient(circle at 30% 110%, #405de6, #bc42bb 45%, #f77737 70%, #f09433)",
   },
   {
-    key: "x",
-    label: "@Astra_Infotech",
-    href: "https://x.com/Astra_Infotech",
-    icon: XIcon,
-    bg: "linear-gradient(135deg,#2a2a2a,#111)",
-  },
-  {
     key: "linkedin",
     label: "Astra Infotech",
     href: "https://www.linkedin.com/company/astra-infotech/posts/?viewAsMember=true",
     icon: Linkedin,
     bg: "linear-gradient(135deg,#0ea5e9,#0a66c2)",
+  },
+  {
+    key: "x",
+    label: "@Astra_Infotech",
+    href: "https://x.com/Astra_Infotech",
+    icon: XIcon,
+    bg: "linear-gradient(135deg,#2a2a2a,#111)",
   },
 ];
 
