@@ -56,7 +56,6 @@ export default function AstraBusinessCard() {
       style={{
         position: "relative",
         width: "100%",
-        background: "#0a0a16",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -69,15 +68,21 @@ export default function AstraBusinessCard() {
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
         * { font-family: 'Poppins', sans-serif; }
-        .astra-shell { min-height: 100vh; min-height: 100dvh; }
-        @keyframes floatBlob1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(30px,40px) scale(1.15);} }
-        @keyframes floatBlob2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-40px,20px) scale(1.1);} }
-        @keyframes floatBlob3 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(20px,-30px) scale(1.2);} }
+        .astra-shell {
+          min-height: 100vh;
+          min-height: 100dvh;
+          background-color: #4b3fd6;
+          background-image: url('/bg-mobile.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        @media (min-width: 768px) {
+          .astra-shell { background-image: url('/bg-desktop.png'); }
+        }
         @keyframes spinRing { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
         @keyframes cardIn { from { opacity:0; transform: translateY(24px) scale(0.96);} to { opacity:1; transform: translateY(0) scale(1);} }
         @keyframes itemIn { from { opacity:0; transform: translateX(-14px);} to { opacity:1; transform: translateX(0);} }
-        @keyframes shimmer { 0%{ background-position: -200% 0; } 100%{ background-position: 200% 0; } }
-        @keyframes twinkle { 0%,100%{ opacity:.15;} 50%{ opacity:.9;} }
         .astra-link-btn { transition: transform .18s ease, background .18s ease, box-shadow .18s ease; -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
         .astra-link-btn:hover { transform: translateY(-2px) scale(1.015); background: rgba(134,59,255,0.16) !important; border-color: rgba(134,59,255,0.4) !important; box-shadow: 0 10px 24px rgba(126,20,255,0.25); }
         .astra-link-btn:active { transform: scale(0.97); }
@@ -88,37 +93,6 @@ export default function AstraBusinessCard() {
         }
       `}</style>
 
-      {/* animated gradient blobs */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <div style={{ position: "absolute", width: 380, height: 380, top: -120, left: -140, borderRadius: "50%", background: "#863bff", opacity: 0.38, filter: "blur(90px)", animation: "floatBlob1 10s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", width: 360, height: 360, top: -150, right: -130, borderRadius: "50%", background: "#7e14ff", opacity: 0.42, filter: "blur(90px)", animation: "floatBlob2 12s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", width: 380, height: 380, top: "42%", left: -160, borderRadius: "50%", background: "#47bfff", opacity: 0.3, filter: "blur(90px)", animation: "floatBlob3 11s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", width: 380, height: 380, top: "55%", right: -150, borderRadius: "50%", background: "#47bfff", opacity: 0.26, filter: "blur(90px)", animation: "floatBlob1 13s ease-in-out infinite" }} />
-        <div style={{ position: "absolute", width: 400, height: 400, bottom: -160, left: "18%", borderRadius: "50%", background: "#7e14ff", opacity: 0.32, filter: "blur(90px)", animation: "floatBlob2 14s ease-in-out infinite" }} />
-        {Array.from({ length: 26 }).map((_, i) => {
-          const left = (i * 37) % 100;
-          const top = (i * 53) % 100;
-          const dur = 2 + (i % 5);
-          const delay = (i % 7) * 0.4;
-          const size = 1.5 + (i % 3);
-          return (
-            <div
-              key={i}
-              style={{
-                position: "absolute",
-                left: `${left}%`,
-                top: `${top}%`,
-                width: size,
-                height: size,
-                borderRadius: "50%",
-                background: "#fff",
-                animation: `twinkle ${dur}s ease-in-out ${delay}s infinite`,
-              }}
-            />
-          );
-        })}
-      </div>
-
       {/* card */}
       <div
         style={{
@@ -126,14 +100,14 @@ export default function AstraBusinessCard() {
           zIndex: 1,
           width: "100%",
           maxWidth: 340,
-          background: "rgba(134,59,255,0.08)",
-          border: "1px solid rgba(134,59,255,0.28)",
-          backdropFilter: "blur(18px)",
-          WebkitBackdropFilter: "blur(18px)",
+          background: "rgba(10,8,30,0.55)",
+          border: "1px solid rgba(255,255,255,0.22)",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
           borderRadius: 26,
           padding: "26px 20px 22px",
           textAlign: "center",
-          boxShadow: "0 20px 60px rgba(0,0,0,0.45), 0 0 40px rgba(126,20,255,0.18)",
+          boxShadow: "0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(0,0,0,0.25)",
           opacity: mounted ? 1 : 0,
           animation: mounted ? "cardIn 0.6s cubic-bezier(.2,.8,.2,1) forwards" : "none",
         }}
