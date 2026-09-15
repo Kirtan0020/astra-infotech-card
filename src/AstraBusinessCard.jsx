@@ -102,6 +102,14 @@ export default function AstraBusinessCard() {
         }
       `}</style>
 
+      <svg style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }} aria-hidden="true">
+        <filter id="astra-liquid-glass" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="2" seed="7" result="noise" />
+          <feGaussianBlur in="noise" stdDeviation="2.5" result="blurredNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="blurredNoise" scale="28" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </svg>
+
       {/* card */}
       <div
         className="astra-glass"
@@ -110,13 +118,13 @@ export default function AstraBusinessCard() {
           zIndex: 1,
           width: "100%",
           maxWidth: 340,
-          background: "linear-gradient(160deg, rgba(186,230,253,0.22), rgba(56,189,248,0.06) 45%, rgba(8,47,73,0.18))",
+          background: "linear-gradient(160deg, rgba(186,230,253,0.18), rgba(56,189,248,0.04) 45%, rgba(8,47,73,0.14))",
           borderTop: "1px solid rgba(224,247,255,0.7)",
           borderLeft: "1px solid rgba(186,230,253,0.35)",
           borderRight: "1px solid rgba(56,189,248,0.2)",
           borderBottom: "1px solid rgba(8,47,73,0.25)",
-          backdropFilter: "none",
-          WebkitBackdropFilter: "none",
+          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(1.08)",
+          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(1.08)",
           borderRadius: 26,
           padding: "26px 20px 22px",
           textAlign: "center",
