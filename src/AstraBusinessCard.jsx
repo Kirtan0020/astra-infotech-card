@@ -61,14 +61,14 @@ export default function AstraBusinessCard() {
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        fontFamily: "'Montserrat', sans-serif",
+        fontFamily: "'Poppins', sans-serif",
         padding: "16px",
         color: "#ffffff",
       }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-        * { font-family: 'Montserrat', sans-serif; }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+        * { font-family: 'Poppins', sans-serif; }
         .astra-shell { min-height: 100vh; min-height: 100dvh; }
         @keyframes floatBlob1 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(30px,40px) scale(1.15);} }
         @keyframes floatBlob2 { 0%,100%{ transform: translate(0,0) scale(1);} 50%{ transform: translate(-40px,20px) scale(1.1);} }
