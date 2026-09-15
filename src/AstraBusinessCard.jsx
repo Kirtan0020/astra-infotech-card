@@ -80,13 +80,13 @@ export default function AstraBusinessCard() {
           min-height: 100vh;
           min-height: 100dvh;
           background-color: #4b3fd6;
-          background-image: linear-gradient(rgba(2,6,23,0.68), rgba(2,6,23,0.68)), url('/bg-mobile.png');
+          background-image: linear-gradient(rgba(2,6,23,0.22), rgba(2,6,23,0.22)), url('/bg-mobile.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
         }
         @media (min-width: 768px) {
-          .astra-shell { background-image: linear-gradient(rgba(2,6,23,0.68), rgba(2,6,23,0.68)), url('/bg-desktop.png'); }
+          .astra-shell { background-image: linear-gradient(rgba(2,6,23,0.22), rgba(2,6,23,0.22)), url('/bg-desktop.png'); }
         }
         @keyframes spinRing { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
         @keyframes cardIn { from { opacity:0; transform: translateY(24px) scale(0.96);} to { opacity:1; transform: translateY(0) scale(1);} }
@@ -95,14 +95,6 @@ export default function AstraBusinessCard() {
         .astra-link-btn:hover { transform: translateY(-2px) scale(1.015); background: rgba(134,59,255,0.16) !important; border-color: rgba(134,59,255,0.4) !important; box-shadow: 0 10px 24px rgba(126,20,255,0.25); }
         .astra-link-btn:active { transform: scale(0.97); }
         .astra-glass { isolation: isolate; }
-        .astra-glass::before {
-          content: "";
-          position: absolute;
-          inset: 0;
-          z-index: -1;
-          background: radial-gradient(120% 60% at 20% 0%, rgba(224,247,255,0.4), rgba(224,247,255,0) 55%);
-          pointer-events: none;
-        }
         .astra-icon-badge { transition: transform .25s ease; }
         .astra-link-btn:hover .astra-icon-badge { transform: rotate(-8deg) scale(1.08); }
         .astra-avatar-wrap { cursor: pointer; }
@@ -131,13 +123,13 @@ export default function AstraBusinessCard() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "linear-gradient(160deg, rgba(186,230,253,0.08), rgba(56,189,248,0.02) 45%, rgba(8,47,73,0.5))",
+          background: "linear-gradient(160deg, rgba(186,230,253,0.16), rgba(56,189,248,0.05) 45%, rgba(8,47,73,0.2))",
           borderTop: "1px solid rgba(224,247,255,0.7)",
           borderLeft: "1px solid rgba(186,230,253,0.35)",
           borderRight: "1px solid rgba(56,189,248,0.2)",
           borderBottom: "1px solid rgba(8,47,73,0.25)",
-          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(0.72)",
-          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(0.72)",
+          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(1.05)",
+          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(1.05)",
           borderRadius: 26,
           padding: "18px 18px 16px",
           textAlign: "center",
