@@ -80,13 +80,13 @@ export default function AstraBusinessCard() {
           min-height: 100vh;
           min-height: 100dvh;
           background-color: #4b3fd6;
-          background-image: linear-gradient(rgba(2,6,23,0.22), rgba(2,6,23,0.22)), url('/bg-mobile.png');
+          background-image: linear-gradient(rgba(2,6,23,0.34), rgba(2,6,23,0.34)), url('/bg-mobile.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
         }
         @media (min-width: 768px) {
-          .astra-shell { background-image: linear-gradient(rgba(2,6,23,0.22), rgba(2,6,23,0.22)), url('/bg-desktop.png'); }
+          .astra-shell { background-image: linear-gradient(rgba(2,6,23,0.34), rgba(2,6,23,0.34)), url('/bg-desktop.png'); }
         }
         @keyframes spinRing { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
         @keyframes cardIn { from { opacity:0; transform: translateY(24px) scale(0.96);} to { opacity:1; transform: translateY(0) scale(1);} }
@@ -123,13 +123,13 @@ export default function AstraBusinessCard() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          background: "linear-gradient(160deg, rgba(186,230,253,0.16), rgba(56,189,248,0.05) 45%, rgba(8,47,73,0.2))",
+          background: "linear-gradient(160deg, rgba(186,230,253,0.14), rgba(56,189,248,0.04) 45%, rgba(8,47,73,0.3))",
           borderTop: "1px solid rgba(224,247,255,0.7)",
           borderLeft: "1px solid rgba(186,230,253,0.35)",
           borderRight: "1px solid rgba(56,189,248,0.2)",
           borderBottom: "1px solid rgba(8,47,73,0.25)",
-          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(1.05)",
-          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(1.05)",
+          backdropFilter: "url(#astra-liquid-glass) blur(1px) saturate(160%) brightness(0.92)",
+          WebkitBackdropFilter: "blur(6px) saturate(160%) brightness(0.92)",
           borderRadius: 26,
           padding: "18px 18px 16px",
           textAlign: "center",
