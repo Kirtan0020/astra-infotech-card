@@ -121,13 +121,13 @@ export default function AstraBusinessCard() {
           position: "relative",
           zIndex: 1,
           width: "100%",
-          maxWidth: 380,
+          maxWidth: 340,
           background: "rgba(134,59,255,0.08)",
           border: "1px solid rgba(134,59,255,0.28)",
           backdropFilter: "blur(18px)",
           WebkitBackdropFilter: "blur(18px)",
-          borderRadius: 28,
-          padding: "34px 22px 28px",
+          borderRadius: 26,
+          padding: "26px 20px 22px",
           textAlign: "center",
           boxShadow: "0 20px 60px rgba(0,0,0,0.45), 0 0 40px rgba(126,20,255,0.18)",
           opacity: mounted ? 1 : 0,
@@ -138,10 +138,10 @@ export default function AstraBusinessCard() {
           src={`data:image/png;base64,${LOGO_B64}`}
           alt="Astra Infotech logo"
           style={{
-            width: 84,
-            height: 84,
+            width: 68,
+            height: 68,
             borderRadius: "50%",
-            margin: "0 auto 10px",
+            margin: "0 auto 8px",
             display: "block",
             filter: "drop-shadow(0 6px 14px rgba(0,0,0,0.45)) drop-shadow(0 0 16px rgba(134,59,255,0.5))",
           }}
@@ -149,9 +149,9 @@ export default function AstraBusinessCard() {
         <div
           style={{
             fontWeight: 700,
-            letterSpacing: 3,
-            fontSize: 14,
-            marginBottom: 20,
+            letterSpacing: 2.5,
+            fontSize: 12,
+            marginBottom: 16,
             textTransform: "uppercase",
             color: "#ffffff",
           }}
@@ -162,9 +162,9 @@ export default function AstraBusinessCard() {
         {/* avatar with rotating gradient ring */}
         <div
           style={{
-            width: 118,
-            height: 118,
-            margin: "0 auto 16px",
+            width: 96,
+            height: 96,
+            margin: "0 auto 12px",
             borderRadius: "50%",
             position: "relative",
           }}
@@ -202,22 +202,22 @@ export default function AstraBusinessCard() {
           </div>
         </div>
 
-        <div style={{ fontSize: 23, fontWeight: 700, margin: "4px 0 4px", color: "#ffffff" }}>
+        <div style={{ fontSize: 19, fontWeight: 700, margin: "4px 0 4px", color: "#ffffff" }}>
           Kirtan Prajapati
         </div>
         <div
           style={{
-            fontSize: 12,
+            fontSize: 11,
             letterSpacing: 1,
             color: "#ffffff",
             textTransform: "uppercase",
-            marginBottom: 22,
+            marginBottom: 16,
           }}
         >
           Founder &amp; CEO &nbsp;•&nbsp; Astra Infotech
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 9 }}>
           {LINKS.map((item, i) => {
             const Icon = item.icon;
             return (
@@ -230,14 +230,14 @@ export default function AstraBusinessCard() {
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 14,
+                  gap: 12,
                   background: "rgba(255,255,255,0.08)",
                   border: "1px solid rgba(255,255,255,0.16)",
-                  borderRadius: 16,
-                  padding: "11px 16px",
+                  borderRadius: 14,
+                  padding: "9px 14px",
                   textDecoration: "none",
                   color: "#fff",
-                  fontSize: 14.5,
+                  fontSize: 13.5,
                   fontWeight: 600,
                   opacity: mounted ? 1 : 0,
                   animation: mounted
@@ -248,8 +248,8 @@ export default function AstraBusinessCard() {
                 <span
                   className="astra-icon-badge"
                   style={{
-                    width: 38,
-                    height: 38,
+                    width: 34,
+                    height: 34,
                     borderRadius: "50%",
                     background: item.bg,
                     display: "flex",
